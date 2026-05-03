@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Big Data Analytics Mini Project: E-Commerce Churn & Revenue Analysis
 
 This mini-project demonstrates a complete end-to-end Big Data Analytics workflow. It focuses on generating/acquiring a large dataset, performing distributed data processing using both Hadoop MapReduce (via `mrjob`) and Apache Spark, and finally running predictive analytics using Spark MLlib.
@@ -95,3 +96,6 @@ This will generate three PNG images:
 
 ## Conclusion
 This project successfully demonstrates the transition from traditional disk-based MapReduce processing to fast, in-memory Spark analytics, as well as the ease of applying Machine Learning models at scale using Spark MLlib.
+=======
+Big Data Analytics Mini-Project: E-Commerce Churn Revenue Analysis
+>>>>>>> a0dc85312bb6f16cacf7e813f53d320a26e2abf1
