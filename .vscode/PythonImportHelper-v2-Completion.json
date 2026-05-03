@@ -1,0 +1,215 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "MRJob",
+        "importPath": "mrjob.job",
+        "description": "mrjob.job",
+        "isExtraImport": true,
+        "detail": "mrjob.job",
+        "documentation": {}
+    },
+    {
+        "label": "MRStep",
+        "importPath": "mrjob.step",
+        "description": "mrjob.step",
+        "isExtraImport": true,
+        "detail": "mrjob.step",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSession",
+        "importPath": "pyspark.sql",
+        "description": "pyspark.sql",
+        "isExtraImport": true,
+        "detail": "pyspark.sql",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSession",
+        "importPath": "pyspark.sql",
+        "description": "pyspark.sql",
+        "isExtraImport": true,
+        "detail": "pyspark.sql",
+        "documentation": {}
+    },
+    {
+        "label": "StringIndexer",
+        "importPath": "pyspark.ml.feature",
+        "description": "pyspark.ml.feature",
+        "isExtraImport": true,
+        "detail": "pyspark.ml.feature",
+        "documentation": {}
+    },
+    {
+        "label": "VectorAssembler",
+        "importPath": "pyspark.ml.feature",
+        "description": "pyspark.ml.feature",
+        "isExtraImport": true,
+        "detail": "pyspark.ml.feature",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "pyspark.ml.feature",
+        "description": "pyspark.ml.feature",
+        "isExtraImport": true,
+        "detail": "pyspark.ml.feature",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "pyspark.ml.classification",
+        "description": "pyspark.ml.classification",
+        "isExtraImport": true,
+        "detail": "pyspark.ml.classification",
+        "documentation": {}
+    },
+    {
+        "label": "MulticlassClassificationEvaluator",
+        "importPath": "pyspark.ml.evaluation",
+        "description": "pyspark.ml.evaluation",
+        "isExtraImport": true,
+        "detail": "pyspark.ml.evaluation",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "pyspark.ml",
+        "description": "pyspark.ml",
+        "isExtraImport": true,
+        "detail": "pyspark.ml",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "sum",
+        "importPath": "pyspark.sql.functions",
+        "description": "pyspark.sql.functions",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.functions",
+        "documentation": {}
+    },
+    {
+        "label": "round",
+        "importPath": "pyspark.sql.functions",
+        "description": "pyspark.sql.functions",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.functions",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "generate_data",
+        "kind": 2,
+        "importPath": "generate_data",
+        "description": "generate_data",
+        "peekOfCode": "def generate_data(num_rows=1000000, filename=\"ecommerce_data.csv\"):\n    print(f\"Generating {num_rows} rows of e-commerce data...\")\n    start_time = time.time()\n    np.random.seed(42)\n    # Generate synthetic data\n    customer_ids = np.random.randint(1000, 50000, size=num_rows)\n    product_ids = np.random.randint(100, 1000, size=num_rows)\n    quantities = np.random.randint(1, 10, size=num_rows)\n    prices = np.round(np.random.uniform(5.0, 500.0, size=num_rows), 2)\n    # Categories: Electronics, Clothing, Home, Books, Beauty",
+        "detail": "generate_data",
+        "documentation": {}
+    },
+    {
+        "label": "MRRevenueByCategory",
+        "kind": 6,
+        "importPath": "mapreduce_job",
+        "description": "mapreduce_job",
+        "peekOfCode": "class MRRevenueByCategory(MRJob):\n    def configure_args(self):\n        super(MRRevenueByCategory, self).configure_args()\n        self.add_passthru_arg('--time', action='store_true', default=False, help='Print execution time')\n    def mapper_init(self):\n        self.start_time = time.time()\n    def mapper(self, _, line):\n        # Skip the header row\n        if line.startswith('transaction_id'):\n            return",
+        "detail": "mapreduce_job",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "spark_mllib",
+        "description": "spark_mllib",
+        "peekOfCode": "def main(input_file):\n    print(\"Initializing Spark Session for MLlib...\")\n    spark = SparkSession.builder \\\n        .appName(\"EcommerceChurnPrediction\") \\\n        .master(\"local[*]\") \\\n        .getOrCreate()\n    spark.sparkContext.setLogLevel(\"ERROR\")\n    print(f\"Reading data from {input_file}...\")\n    df = spark.read.csv(input_file, header=True, inferSchema=True)\n    # We want to predict 'churn' based on 'category', 'quantity', and 'price'",
+        "detail": "spark_mllib",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "spark_processing",
+        "description": "spark_processing",
+        "peekOfCode": "def main(input_file):\n    print(\"Initializing Spark Session...\")\n    spark = SparkSession.builder \\\n        .appName(\"EcommerceRevenueByCategory\") \\\n        .master(\"local[*]\") \\\n        .getOrCreate()\n    # Suppress verbose logging\n    spark.sparkContext.setLogLevel(\"ERROR\")\n    start_time = time.time()\n    print(f\"Reading data from {input_file}...\")",
+        "detail": "spark_processing",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "visualize_results",
+        "description": "visualize_results",
+        "peekOfCode": "def main():\n    # 1. Performance Comparison (MapReduce vs Spark)\n    # Since we can't reliably read the MapReduce time from Python without parsing logs,\n    # we'll assume the user passes it or we'll mock a default for demonstration\n    # if it's not provided.\n    spark_time = 0.0\n    if os.path.exists(\"spark_time.txt\"):\n        with open(\"spark_time.txt\", \"r\") as f:\n            spark_time = float(f.read().strip())\n    else:",
+        "detail": "visualize_results",
+        "documentation": {}
+    }
+]

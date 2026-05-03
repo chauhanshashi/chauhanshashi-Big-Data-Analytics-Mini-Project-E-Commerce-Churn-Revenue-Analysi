@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+ecommerce_data.csv
+*.txt
+spark-warehouse/
+.env
